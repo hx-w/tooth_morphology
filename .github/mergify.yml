@@ -1,0 +1,29 @@
+pull_request_rules:
+  - name: automatic merge
+    conditions:
+      - or:
+        - approved-reviews-by=hx-w
+        - check-success=models_checker
+    actions:
+      comment:
+        message: "this pull request is ready to be merged."
+      label:
+        add:
+          - check-passed
+      merge:
+        method: merge
+      delete_head_branch: 
+
+  - name: automatic close
+    conditions:
+      - or:
+        - check-failure=models_checker
+        - conflict
+    actions:
+      close:
+        message: "@{{author}} this pull request is invalid, please fix it."
+      label:
+        add:
+          - check-failed
+      delete_head_branch: 
+  
