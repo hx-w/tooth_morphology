@@ -31,7 +31,7 @@ if __name__ == '__main__':
         Rule_Manifold,
         # Rule_Centralized,
         # Rule_Attachments,
-        Rule_Orientation
+        # Rule_Orientation
     ]
 
     files = DiffFilesFetcher.fetch()
