@@ -31,7 +31,6 @@ if __name__ == '__main__':
         Rule_Manifold,
         # Rule_Centralized,
         # Rule_Attachments,
-        Rule_DirectoryStructure,
         Rule_Orientation
     ]
 
@@ -39,7 +38,9 @@ if __name__ == '__main__':
 
     logger.info(f'files to check: {files}')
 
-    if all([check_file(f, rules) for f in files]):
+    if Rule_DirectoryStructure.__call__() and \
+        all([check_file(f, rules) for f in files]):
+
         logger.info('==> PR check passed <==')
     else:
         logger.error('xxxx PR check failed xxxx')
