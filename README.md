@@ -13,7 +13,8 @@
 
 ## Dashboard
 
-![dataset summary](http://chat.scubot.com:7890/get/summary)
+![dataset summary](http://chat.scubot.com:7890/get/summary-)
+
 
 ## Manual
 
