@@ -4,9 +4,9 @@
 
 <div align="center">
 
-![repo-size](https://img.shields.io/github/repo-size/hx-w/teeth_morphology_collection)
-![commit-activity-weekly](https://img.shields.io/github/commit-activity/w/hx-w/teeth_morphology_collection)
-![dashboard](https://img.shields.io/github/actions/workflow/status/hx-w/teeth_morphology_collection/DASHBOARD_UPDATER.yml?label=dashboard)
+![repo-size](https://img.shields.io/github/repo-size/hx-w/tooth_morphology)
+![commit-activity-weekly](https://img.shields.io/github/commit-activity/w/hx-w/tooth_morphology)
+![dashboard](https://img.shields.io/github/actions/workflow/status/hx-w/tooth_morphology/DASHBOARD_UPDATER.yml?label=dashboard)
 </div>
 
 
