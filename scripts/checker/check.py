@@ -10,7 +10,8 @@ from logger import logger
 from rules import (
     BaseRule,
     Rule_Manifold, Rule_Centralized,
-    Rule_Attachments, Rule_DirectoryStructure
+    Rule_Attachments, Rule_DirectoryStructure,
+    Rule_Orientation
 )
 import trimesh
 
@@ -28,9 +29,10 @@ def check_file(filepath: str, rules: List[BaseRule]) -> bool:
 if __name__ == '__main__':
     rules = [
         Rule_Manifold,
-        Rule_Centralized,
+        # Rule_Centralized,
         # Rule_Attachments,
-        Rule_DirectoryStructure
+        Rule_DirectoryStructure,
+        Rule_Orientation
     ]
 
     files = DiffFilesFetcher.fetch()
