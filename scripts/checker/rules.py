@@ -47,8 +47,11 @@ class Rule_Centralized(BaseRule):
     @exception_handler
     def __call__(cls, mesh: Trimesh) -> bool:
         _nm = mesh.metadata["file_name"]
-        logger.info(f'{_nm} => mesh centroid: {mesh.centroid}')
-        return np.all(np.abs(mesh.centroid) < cls.__Threshold)
+        # compute mesh bbox center
+        bbox_center = np.mean(mesh.bounds, axis=0)
+        logger.info(f'{_nm} => bbox center: {bbox_center}')
+
+        return np.all(np.abs(bbox_center) < cls.__Threshold)
 
 
 class Rule_Attachments(BaseRule):
@@ -104,6 +107,27 @@ class Rule_DirectoryStructure(BaseRule):
 
         return True
     
+class Rule_Orientation(BaseRule):
+    _template_mesh = trimesh.load('static/template.obj')
+    _THR = 1
+
+    def __str__(self):
+        return 'Rule: orientation'
+
+    @classmethod
+    @exception_handler
+    def __call__(cls, mesh: Trimesh) -> bool:
+        _nm = mesh.metadata["file_name"]
+        # compute mean distance between two meshes
+
+        dists = mesh.nearest.signed_distance(cls._template_mesh.vertices)
+
+        mean_dist = np.mean(np.abs(dists))
+
+        logger.info(f'{_nm} => mean distance: {mean_dist}')
+
+        return mean_dist < cls._THR
+
 
 if __name__ == '__main__':
     print(Rule_DirectoryStructure.__call__())
