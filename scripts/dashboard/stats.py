@@ -22,7 +22,7 @@ def count_label(label: str) -> int:
     def _target_valid(dir: str) -> bool:
         '''must be a obj file in the dir
         '''
-        if not os.path.isdir(dir): retur False
+        if not os.path.isdir(dir): return False
         return len([f for f in os.listdir(dir) if f.endswith('.obj')])
 
     _base = os.path.join(DATASETS_DIR, label)
