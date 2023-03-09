@@ -3,7 +3,6 @@
 import os
 from typing import Any
 from abc import ABCMeta
-import trimesh
 from trimesh import Trimesh
 import numpy as np
 
@@ -63,7 +62,7 @@ class Rule_Attachments(BaseRule):
         _nm = mesh.metadata["file_name"]
         abs_path = mesh.metadata['file_path'].strip(_nm)
 
-        _attatch_suffix = ['.mat']
+        _attatch_suffix = ['.tfm']
         _attatch_files = [
             f for f in os.listdir(abs_path)
             if os.path.splitext(f)[-1] in _attatch_suffix
