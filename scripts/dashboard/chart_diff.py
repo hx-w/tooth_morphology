@@ -10,8 +10,8 @@ def generate_diff_chart(title: str, data_source: dict) -> str:
     @return image url
     '''
     qc = QuickChart()
-    qc.width = 500
-    qc.height = 300
+    qc.width = 600
+    qc.height = 400
     qc.version = '2'
 
     _config = {
