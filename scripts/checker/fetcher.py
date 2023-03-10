@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import re
+import os
 import subprocess
 from typing import List
 from wraper import exception_handler
@@ -24,6 +25,9 @@ class DiffFilesFetcher:
         otps = cls._execute_shell_command(f'git diff --name-only origin/{cls._main_branch}')
 
         return list(filter(
-            lambda f: any([p.match(f) for p in cls._interested_files_patterns]),
+            lambda f: (
+                os.path.exists(f) and
+                any([p.match(f) for p in cls._interested_files_patterns])
+            ),
             otps.strip().split('\n')
         ))

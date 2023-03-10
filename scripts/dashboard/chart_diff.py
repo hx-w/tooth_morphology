@@ -4,7 +4,7 @@ import json
 from quickchart import QuickChart
 
 
-def bar_stack_chart(title: str, labels: list, datasets: list) -> str:
+def generate_diff_chart(title: str, data_source: dict) -> str:
     '''
     @param see quickchart bar stack chart
     @return image url
@@ -16,10 +16,7 @@ def bar_stack_chart(title: str, labels: list, datasets: list) -> str:
 
     _config = {
         'type': 'bar',
-        'data': {
-            'labels': labels,
-            'datasets': datasets,
-        },
+        'data': data_source,
         'options': {
             'title': { 
                 'display': True,
