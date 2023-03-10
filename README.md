@@ -1,4 +1,4 @@
-<p align="center"><img src="https://imgbed.scubot.com/image/RoundCorner_new.png" width=138></p>
+<p align="center"><img src="https://imgbed.scubot.com/image/RoundCorner_1.png" width=138></p>
 <h1 align="center">Tooth Morphology Collection</h1>
 <p align="center"><strong>Collection of individual, feature-reserved and well-organized <em>3D Tooth models</em>.</strong></p>
 
