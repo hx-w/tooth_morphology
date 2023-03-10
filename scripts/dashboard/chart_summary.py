@@ -58,7 +58,7 @@ def generate_summary_chart(title: str, labels: list, datasets: list) -> str:
                     {
                         "ticks": {
                             'min': 0,
-                            'max': max(datasets[0]['data']) + 5,
+                            # 'max': max(datasets[0]['data']) + 5,
                             'fontFamily': 'Mono'
                         },
                         'display': True,
