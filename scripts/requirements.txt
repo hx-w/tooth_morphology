@@ -4,3 +4,4 @@ networkx
 scipy
 quickchart.io
 requests
+seaborn

@@ -4,14 +4,14 @@ import json
 from quickchart import QuickChart
 
 
-def generate_chart_bar(title: str, labels: list, datasets: list) -> str:
+def generate_summary_chart(title: str, labels: list, datasets: list) -> str:
     '''
     @param see quickchart bar chart
     @return image url
     '''
     qc = QuickChart()
     qc.width = 500
-    qc.height = 300
+    qc.height = 350
     qc.version = '2'
 
     _config = {
@@ -27,12 +27,13 @@ def generate_chart_bar(title: str, labels: list, datasets: list) -> str:
             },
             'plugins': {
                 'datalabels': {
-                    'anchor': 'center',
-                    'align': 'center',
-                    'color': '#666',
-                    'font': {
-                        'weight': 'normal',
-                    },
+                    'anchor': 'end',
+                    'align': 'top',
+                    'color': '#fff',
+                    'backgroundColor': 'rgba(34, 139, 34, 0.6)',
+                    'borderColor': 'rgba(34, 139, 34, 1.0)',
+                    'borderWidth': 1,
+                    'borderRadius': 5,
                 },
                 "roundedBars": True 
             },
