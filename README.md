@@ -12,9 +12,18 @@
 
 
 ## Dashboard
-
-![dataset summary](http://chat.scubot.com:7890/get/summary-)
-
+<table>
+    <tr>
+        <td><p align="center">Summary</p>
+        </td>
+        <td><p align="center">Updates</p>
+        </td>
+    </tr>
+    <tr>
+        <td><img src=http://chat.scubot.com:7890/get/summary- width=600/></td>
+        <td><img src=http://chat.scubot.com:7890/get/diff- width=600/></td>
+    </tr>
+</table>
 
 ## Manual
 

@@ -18,6 +18,15 @@ def generate_diff_chart(title: str, data_source: dict) -> str:
         'type': 'bar',
         'data': data_source,
         'options': {
+            'legend': {
+                'labels': {
+                    'fontSize': 15,
+                    # 'fontStyle': 'bold',
+                    'fontColor': '#404040',
+                    'padding': 8,
+                },
+                'align': 'start'
+            },
             'title': { 
                 'display': True,
                 'text': title,
@@ -36,6 +45,32 @@ def generate_diff_chart(title: str, data_source: dict) -> str:
                 'yAxes': [
                     {
                         'stacked': True,
+                    },
+                ],
+            },
+            'scales': {
+                'xAxes': [
+                    {
+                        'display': True,
+                        'scaleLabel': {
+                            'display': True,
+                            'labelString': 'Dates with changes',
+                        },
+                        'ticks': {
+                            'fontFamily': 'Consolas'
+                        }
+                    },
+                ],
+                'yAxes': [
+                    {
+                        'display': True,
+                        'scaleLabel': {
+                            'display': True,
+                            'labelString': 'Instance changes',
+                        },
+                        'ticks': {
+                            'fontFamily': 'Consolas'
+                        }
                     },
                 ],
             },

@@ -128,7 +128,8 @@ def fetch_PR_diff(interest_types: List[str], data_pr: Dict[str, str]) -> dict:
 
 
 def generate_diff_data(interest_types: List[str], date_pr: Dict[str, int], stats: dict) -> dict:
-    colors = sns.color_palette("hls", len(interest_types))
+    # colors = sns.color_palette("husl", len(interest_types))
+    colors = sns.hls_palette(len(interest_types), l=.3, s=.8)
     raw_colors = list(map(lambda x: f'rgba({int(x[0] * 255)}, {int(x[1] * 255)}, {int(x[2] * 255)}, 0.8)', colors))
     weak_colors = list(map(lambda x: f'rgba({int(x[0] * 255)}, {int(x[1] * 255)}, {int(x[2] * 255)}, 0.4)', colors))
 
@@ -140,6 +141,19 @@ def generate_diff_data(interest_types: List[str], date_pr: Dict[str, int], stats
     for i, model_type in enumerate(interest_types):
         ''' addition, deletion, total
         '''
+        # total
+        data_total = list(map(
+            lambda date: stats[date][model_type]['total'] if model_type in stats[date] else 0,
+            date_pr.keys()
+        ))
+        data_source['datasets'].append({
+            'type': 'line',
+            'label': f'{model_type} - Total',
+            'borderColor': raw_colors[i].replace('0.8', '1.0'),
+            'data': data_total,
+            'fill': False,
+        })
+
         # addition
         data_addition = list(map(
             lambda date: stats[date][model_type]['addition'] if model_type in stats[date] else 0,
@@ -147,7 +161,7 @@ def generate_diff_data(interest_types: List[str], date_pr: Dict[str, int], stats
         ))
         data_source['datasets'].append({
             'type': 'bar',
-            'label': f'{model_type} - Addition',
+            'label': f'- Addition',
             'backgroundColor': raw_colors[i],
             'data': data_addition,
             'stack': model_type
@@ -160,25 +174,12 @@ def generate_diff_data(interest_types: List[str], date_pr: Dict[str, int], stats
         ))
         data_source['datasets'].append({
             'type': 'bar',
-            'label': f'{model_type} - Deletion',
+            'label': f'- Deletion',
             'backgroundColor': weak_colors[i],
             'data': data_deletion,
             'stack': model_type
         })
 
-        # total
-        data_total = list(map(
-            lambda date: stats[date][model_type]['total'] if model_type in stats[date] else 0,
-            date_pr.keys()
-        ))
-        data_source['datasets'].append({
-            'type': 'line',
-            'label': f'{model_type} - Total',
-            'borderColor': raw_colors[i],
-            'data': data_total,
-            'fill': False,
-            # 'yAxisID': 'y-axis-2'
-        })
 
 
     return data_source
@@ -194,7 +195,6 @@ if __name__ == '__main__':
 
     data_source = generate_diff_data(model_types, data_pr, stats)
 
-    print(data_source)
     from chart_diff import generate_diff_chart
 
     url = generate_diff_chart('datasets updates', data_source)

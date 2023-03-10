@@ -21,6 +21,10 @@ def generate_summary_chart(title: str, labels: list, datasets: list) -> str:
             'datasets': datasets,
         },
         'options': {
+            'legend': {
+                'display': False,
+            },
+            'stacked': True,
             'title': { 
                 'display': True,
                 'text': title,
@@ -36,6 +40,34 @@ def generate_summary_chart(title: str, labels: list, datasets: list) -> str:
                     'borderRadius': 5,
                 },
                 "roundedBars": True 
+            },
+            'scales': {
+                'xAxes': [
+                    {
+                        'display': True,
+                        'scaleLabel': {
+                            'display': True,
+                            'labelString': 'Model types',
+                        },
+                        'ticks': {
+                            'fontFamily': 'Mono'
+                        }
+                    },
+                ],
+                'yAxes': [
+                    {
+                        "ticks": {
+                            'min': 0,
+                            'max': max(datasets[0]['data']) + 5,
+                            'fontFamily': 'Mono'
+                        },
+                        'display': True,
+                        'scaleLabel': {
+                            'display': True,
+                            'labelString': 'Instance counts',
+                        },
+                    },
+                ],
             },
         },
     }
