@@ -38,7 +38,7 @@ def update_diff():
 
     data_source = generate_diff_data(model_types, data_pr, stats)
 
-    url = generate_diff_chart('datasets updates', data_source)
+    url = generate_diff_chart('dataset updates', data_source)
     update_chart_url('diff', url)
 
 if __name__ == '__main__':
