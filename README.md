@@ -25,7 +25,7 @@
     </tr>
 </table> -->
 
-<table border="1">
+<table border="0">
 <tr>
 <td>
 <p align="center"><strong>Summary</strong></p>
