@@ -28,15 +28,15 @@
 <table border="1">
 <tr>
 <td>
-<p align="center"><strong>Summary</strong></p><br/>
-<p align="center"><a href="http://chat.scubot.com:7890/get/summary-?redirect=true" target="_blank"> > source < </a> </p>
+<p align="center"><strong>Summary</strong></p>
+<p align="center"><a href="http://chat.scubot.com:7890/get/summary-?redirect=true" target="_blank"> [source]  </a> </p>
 </td>
 <td><img src=http://chat.scubot.com:7890/get/summary-?redirect=false width=600/></td>
 </tr>
 <tr>
 <td>
-<p align="center"><strong>Updates</strong></p><br/>
-<p align="center"><a href="http://chat.scubot.com:7890/get/diff-?redirect=true" target="_blank"> > source < </a> </p>
+<p align="center"><strong>Updates</strong></p>
+<p align="center"><a href="http://chat.scubot.com:7890/get/diff-?redirect=true" target="_blank"> [source] </a> </p>
 </td>
 <td><img src=http://chat.scubot.com:7890/get/diff-?redirect=false width=600/></td>
 </tr>
