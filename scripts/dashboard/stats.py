@@ -102,6 +102,7 @@ def fetch_PR_diff(interest_types: List[str], data_pr: Dict[str, str]) -> dict:
             add_or_delete = list(filter(
                 lambda x: (
                         x['status'] in ['added', 'removed'] and
+                        x['filename'].endswith('.obj') and
                         len(x['filename'].split('/')) > 1 and
                         x['filename'].split('/')[1] in interest_types
                     ),
@@ -120,7 +121,7 @@ def fetch_PR_diff(interest_types: List[str], data_pr: Dict[str, str]) -> dict:
                     stats[date][model_type]['addition'] += 1
                     stats[date][model_type]['total'] += 1
                 else:
-                    stats[date][model_type]['deletion'] += 1
+                    stats[date][model_type]['deletion'] -= 1
                     stats[date][model_type]['total'] -= 1
 
     return stats
