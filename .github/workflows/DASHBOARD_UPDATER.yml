@@ -2,7 +2,7 @@ name: DASHBOARD_UPDATER
 
 on:
   workflow_dispatch:
-  pull_requests:
+  pull_request:
     types: [closed]
   # schedule:
     # - cron: "*/30 * * * *"
