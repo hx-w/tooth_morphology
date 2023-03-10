@@ -12,7 +12,7 @@
 
 
 ## Dashboard
-<table>
+<!-- <table>
     <tr>
         <td><p align="center">Summary</p>
         </td>
@@ -23,6 +23,23 @@
         <td><img src=http://chat.scubot.com:7890/get/summary- width=600/></td>
         <td><img src=http://chat.scubot.com:7890/get/diff- width=600/></td>
     </tr>
+</table> -->
+
+<table border="1">
+<tr>
+<td>
+<p align="center"><strong>Summary</strong></p><br/>
+<p align="center"><a href="http://chat.scubot.com:7890/get/summary-?redirect=true" target="_blank"> > source < </a> </p>
+</td>
+<td><img src=http://chat.scubot.com:7890/get/summary-?redirect=false width=600/></td>
+</tr>
+<tr>
+<td>
+<p align="center"><strong>Updates</strong></p><br/>
+<p align="center"><a href="http://chat.scubot.com:7890/get/diff-?redirect=true" target="_blank"> > source < </a> </p>
+</td>
+<td><img src=http://chat.scubot.com:7890/get/diff-?redirect=false width=600/></td>
+</tr>
 </table>
 
 ## Manual
@@ -39,7 +56,7 @@
 ├── datasets  # dataset source
 │   └── {{model type}}
 │       └── {{model instance}}
-|           |-- {{model file}}
+|           |── {{model file}}
 │           └── {{model attachments}}
 |
 └── scripts   # scripts for maintenance
