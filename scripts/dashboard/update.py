@@ -37,10 +37,12 @@ def update_diff():
     stats = fetch_PR_diff(model_types, data_pr)
 
     data_source = generate_diff_data(model_types, data_pr, stats)
+    
+    if data_source:
+        url = generate_diff_chart('dataset updates', data_source)
+        update_chart_url('diff', url)
 
-    url = generate_diff_chart('dataset updates', data_source)
-    update_chart_url('diff', url)
-
+        
 if __name__ == '__main__':
     print('==> updating summary chart')
     update_summary()
