@@ -10,8 +10,8 @@ def generate_summary_chart(title: str, labels: list, datasets: list) -> str:
     @return image url
     '''
     qc = QuickChart()
-    qc.width = 600
-    qc.height = 400
+    qc.width = 800
+    qc.height = 500
     qc.version = '2'
 
     _config = {

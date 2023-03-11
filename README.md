@@ -13,14 +13,14 @@ Tooth Morphology Collection
 
 <h4 align="center"><strong>
 A collection of individual, feature-reserved and well-organized <em>3D Tooth models</em>.
-<strong></h4>
+</strong></h4>
 
 <br/>
 <!-- &nbsp; -->
 
 ## Dashboard
 
-<table border="0">
+<table border="0" class="table">
 <tr>
 <td>
 <p align="center"><strong>Summary</strong></p>
@@ -31,7 +31,7 @@ A collection of individual, feature-reserved and well-organized <em>3D Tooth mod
 <tr>
 <td>
 <p align="center"><strong>Updates</strong></p>
-<p align="center"><a href="http://chat.scubot.com:7890/get/diff-?redirect=true" target="view_window"> [source] </a> </p>
+<p align="center"><a href="http://chat.scubot.com:7890/get/diff-?redirect=true" target="view_window"> [source] </a></p>
 </td>
 <td><img src=http://chat.scubot.com:7890/get/diff-?redirect=false width=800/></td>
 </tr>
@@ -51,21 +51,13 @@ A collection of individual, feature-reserved and well-organized <em>3D Tooth mod
 ├── datasets  # dataset source
 │   └── {{model type}}
 │       └── {{model instance}}
-|           |── {{model file}}
+|           ├── {{model file}}
 │           └── {{model attachments}}
 |
 └── scripts   # scripts for maintenance
     ├── checker
-    │   ├── check.py
-    │   ├── fetcher.py
-    │   ├── logger.py
-    │   ├── rules.py
-    │   └── wraper.py
+    │   └── check.py
     ├── dashboard
-    │   ├── chart_bar.py
-    │   ├── chart_bar_stack.py
-    │   ├── dump.py
-    │   ├── stats.py
     │   └── update.py
     ├── release.py
     └── requirements.txt
