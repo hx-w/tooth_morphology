@@ -138,6 +138,7 @@ def generate_diff_data(interest_types: List[str], date_pr: Dict[str, int], stats
         'datasets': []
     }
 
+    do_update = 0
     for i, model_type in enumerate(interest_types):
         ''' addition, deletion, total
         '''
@@ -179,8 +180,10 @@ def generate_diff_data(interest_types: List[str], date_pr: Dict[str, int], stats
             'data': data_deletion,
             'stack': model_type
         })
-
-
+        do_update += sum(data_addition) - sum(data_deletion)
+    
+    if do_update == 0:
+        return False
 
     return data_source
 
