@@ -81,6 +81,6 @@
 
 ### Branch strategy
 
-- [master] projected.
+- [master] protected.
 - [data_{{name}}] models uploading, editing, deleting.
 - [dev_{{name}}] scripts developing branch.
