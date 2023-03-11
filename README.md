@@ -15,36 +15,25 @@ Tooth Morphology Collection
 A collection of individual, feature-reserved and well-organized <em>3D Tooth models</em>.
 <strong></h4>
 
-&nbsp;
+<br/>
+<!-- &nbsp; -->
 
 ## Dashboard
-<!-- <table>
-    <tr>
-        <td><p align="center">Summary</p>
-        </td>
-        <td><p align="center">Updates</p>
-        </td>
-    </tr>
-    <tr>
-        <td><img src=http://chat.scubot.com:7890/get/summary- width=600/></td>
-        <td><img src=http://chat.scubot.com:7890/get/diff- width=600/></td>
-    </tr>
-</table> -->
 
 <table border="0">
 <tr>
 <td>
 <p align="center"><strong>Summary</strong></p>
-<p align="center"><a href="http://chat.scubot.com:7890/get/summary-?redirect=true" target="view_window"> [source]  </a> </p>
+<p align="center"><a href="http://chat.scubot.com:7890/get/summary-?redirect=true" target="view_window"> [source]  </a></p>
 </td>
-<td><img src=http://chat.scubot.com:7890/get/summary-?redirect=false width=600/></td>
+<td><img src=http://chat.scubot.com:7890/get/summary-?redirect=false width=800/></td>
 </tr>
 <tr>
 <td>
 <p align="center"><strong>Updates</strong></p>
 <p align="center"><a href="http://chat.scubot.com:7890/get/diff-?redirect=true" target="view_window"> [source] </a> </p>
 </td>
-<td><img src=http://chat.scubot.com:7890/get/diff-?redirect=false width=600/></td>
+<td><img src=http://chat.scubot.com:7890/get/diff-?redirect=false width=800/></td>
 </tr>
 </table>
 
