@@ -1,15 +1,21 @@
 <p align="center"><img src="https://imgbed.scubot.com/image/RoundCorner_1.png" width=138></p>
-<h1 align="center">Tooth Morphology Collection</h1>
-<p align="center"><strong>Collection of individual, feature-reserved and well-organized <em>3D Tooth models</em>.</strong></p>
+
+<p><h2 align="center">
+Tooth Morphology Collection
+</h2></p>
 
 <div align="center">
 
-![repo-size](https://img.shields.io/github/repo-size/hx-w/tooth_morphology)
-![commit-activity-weekly](https://img.shields.io/github/commit-activity/w/hx-w/tooth_morphology)
-![dashboard](https://img.shields.io/github/actions/workflow/status/hx-w/tooth_morphology/DASHBOARD_UPDATER.yml?label=dashboard)
+![repo-size](https://img.shields.io/github/repo-size/hx-w/tooth_morphology?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41")
+![commit-activity-weekly](https://img.shields.io/github/commit-activity/w/hx-w/tooth_morphology?style=for-the-badge&logo=github&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41")
+![dashboard](https://img.shields.io/github/actions/workflow/status/hx-w/tooth_morphology/DASHBOARD_UPDATER.yml?label=dashboard&style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41")
 </div>
 
+<h4 align="center"><strong>
+A collection of individual, feature-reserved and well-organized <em>3D Tooth models</em>.
+<strong></h4>
 
+&nbsp;
 
 ## Dashboard
 <!-- <table>
