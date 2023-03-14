@@ -10,7 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        ref: ${{ github.ref_name }}
+        fetch-depth: 0
+        ref: ${{ github.event.pull_request.head.ref }}
     - name: Set up Python Env
       uses: actions/setup-python@v3
       with:
@@ -30,4 +31,4 @@ jobs:
         message: 'unreference vertices removed'
         commit: --allow-empty
         fetch: true
-        push: ${{ github.ref_name }}
+        push: ${{ github.event.pull_request.head.ref }}
