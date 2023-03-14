@@ -16,8 +16,6 @@ from rules import (
 )
 import trimesh
 
-NEED_COMMIT = False
-
 def check_file(filepath: str, rules: List[BaseRule]) -> bool:
     '''
     @param [filename] file path
@@ -25,18 +23,27 @@ def check_file(filepath: str, rules: List[BaseRule]) -> bool:
     '''
     global NEED_COMMIT
     logger.info(f'checking file: {filepath}')
-    mesh = trimesh.load(filepath)
+    mesh = trimesh.load_mesh(filepath)
     older_num = mesh.vertices.shape[0]
+
+    mesh.remove_degenerate_faces()
+    mesh.remove_duplicate_faces()
+    mesh.remove_infinite_values()
     mesh.remove_unreferenced_vertices()
+
+    need_commit = False
     if older_num != mesh.vertices.shape[0]:
-        logger.info(f'{mesh.metadata["file_name"]} => Remove unreferenced vertices')
+        logger.info(f'{mesh.metadata["file_name"]} => Remove unreferenced vertices {older_num} to {mesh.vertices.shape[0]}')
         mesh.export(filepath)
-        NEED_COMMIT = True
+        need_commit = True
 
     return all([rule.__call__(mesh) for rule in rules])
 
 
 if __name__ == '__main__':
+    global NEED_COMMIT
+    NEED_COMMIT = False
+
     rules = [
         Rule_Manifold,
         # Rule_Centralized,
