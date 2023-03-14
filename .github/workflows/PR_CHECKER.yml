@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        ref: ${{ github.event.pull_request.head.ref }}
     - name: Set up Python Env
       uses: actions/setup-python@v3
       with:
@@ -22,9 +25,10 @@ jobs:
       run: |
         git fetch
         python scripts/checker/check.py
-    - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
+    - name: Post push
+      uses: ad-m/github-push-action@master
       with:
-        add: 'datasets'
-        message: 'unreference vertices removed'
-        commit: --allow-empty
-        push: ${{ github.ref_name }}
+        github_token: ${{ secrets.TOKEN }}
+        force: false
+        branch: ${{ github.event.pull_request.head.ref }}
+  
