@@ -27,8 +27,8 @@ jobs:
         python scripts/checker/check.py
     - name: Post push
       uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.TOKEN }}
-          force: false
-          branch: ${{ github.event.pull_request.head.ref }}
+      with:
+        github_token: ${{ secrets.TOKEN }}
+        force: false
+        branch: ${{ github.event.pull_request.head.ref }}
   
