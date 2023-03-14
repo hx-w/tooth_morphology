@@ -23,6 +23,8 @@ def check_file(filepath: str, rules: List[BaseRule]) -> bool:
     '''
     logger.info(f'checking file: {filepath}')
     mesh = trimesh.load(filepath)
+    mesh.remove_unreferenced_vertices()
+    mesh.export(filepath)
     return all([rule.__call__(mesh) for rule in rules])
 
 

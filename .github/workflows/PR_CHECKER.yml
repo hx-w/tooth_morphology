@@ -22,3 +22,9 @@ jobs:
       run: |
         git fetch
         python scripts/checker/check.py
+    - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
+      with:
+        add: 'datasets'
+        message: 'unreference vertices removed'
+        commit: --allow-empty
+        push: true
