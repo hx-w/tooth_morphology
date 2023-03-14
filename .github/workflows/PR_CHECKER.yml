@@ -27,4 +27,4 @@ jobs:
         add: 'datasets'
         message: 'unreference vertices removed'
         commit: --allow-empty
-        push: true
+        push: ${{ github.ref_name }}
