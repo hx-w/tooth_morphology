@@ -65,7 +65,7 @@ if __name__ == '__main__':
 
     if NEED_COMMIT:
         logger.info('==> Need post commit <==')
-        os.system('git config --local user.name "hx-w"')
-        os.system('git config --local user.email "herixth@163.com"')
+        os.system('git config --local user.name "github-actions[bot]"')
+        os.system('git config --local user.email "github-actions[bot]@users.noreply.github.com"')
         os.system('git add .')
         os.system('git commit -m "Remove unreferenced vertices"')
