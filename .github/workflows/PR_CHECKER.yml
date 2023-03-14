@@ -26,7 +26,7 @@ jobs:
         git fetch
         python scripts/checker/check.py
     - name: Post push
-        uses: ad-m/github-push-action@master
+      uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.TOKEN }}
           force: false
