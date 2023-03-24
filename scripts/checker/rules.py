@@ -91,6 +91,10 @@ class Rule_DirectoryStructure(BaseRule):
         def _is_valid_dir(dir: str) -> bool:
             return os.path.isdir(dir) and all(not f.endswith('obj') for f in os.listdir(dir))
 
+        if not _is_valid_dir('./'):
+            logger.info('first level check error')
+            return False
+
         sec_level = filter(
             lambda x: os.path.isdir(os.path.join(cls.DATASETS_DIR, x)),
             os.listdir(cls.DATASETS_DIR)
