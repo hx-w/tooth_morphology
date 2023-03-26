@@ -5,3 +5,4 @@ scipy
 quickchart.io
 requests
 seaborn
+chardet
