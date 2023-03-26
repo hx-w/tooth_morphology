@@ -46,13 +46,14 @@ def get_PR_ids() -> Dict[str, int]: # {date: id}
     try:
         resp = requests.get(
             'https://api.github.com/repos/hx-w/tooth_morphology/pulls',
-            params={'state': 'closed', 'direction': 'asc'},
+            params={'state': 'closed', 'direction': 'desc'},
             auth=('hx-w', TOKEN)
         )
         if resp.status_code != 200:
             raise Exception('get PR ids failed')
         
-        valid_pr_info = list(filter(lambda x: x['merged_at'] is not None, resp.json()))
+        resp_list = resp.json()[::-1]
+        valid_pr_info = list(filter(lambda x: x['merged_at'] is not None, resp_list))
         dates = list(map(
             lambda x: datetime.datetime.strptime(
                 x['merged_at'], '%Y-%m-%dT%H:%M:%SZ'
@@ -66,6 +67,7 @@ def get_PR_ids() -> Dict[str, int]: # {date: id}
             if date not in date_pr:
                 date_pr[date] = []
             date_pr[date].append(pr)  
+
         return date_pr
 
     except Exception as e:
@@ -200,4 +202,4 @@ if __name__ == '__main__':
     from chart_diff import generate_diff_chart
 
     url = generate_diff_chart('datasets updates', data_source)
-    print(url)
+
