@@ -35,8 +35,8 @@ class Rule_Manifold(BaseRule):
         logger.info(f'{_nm} => is_volume: {mesh.is_volume}')
         
         return (
-            mesh.is_watertight and
-            mesh.is_winding_consistent and
+            mesh.is_watertight or
+            mesh.is_winding_consistent or
             mesh.is_volume
         )
 
