@@ -46,7 +46,7 @@ def get_PR_ids() -> Dict[str, int]: # {date: id}
     try:
         resp = requests.get(
             'https://api.github.com/repos/hx-w/tooth_morphology/pulls',
-            params={'state': 'closed', 'direction': 'desc'},
+            params={'state': 'closed', 'direction': 'desc', 'per_page': 75},
             auth=('hx-w', TOKEN)
         )
         if resp.status_code != 200:
