@@ -31,11 +31,10 @@ def check_file(filepath: str, rules: List[BaseRule]) -> bool:
     mesh.remove_infinite_values()
     mesh.remove_unreferenced_vertices()
 
-    need_commit = False
     if older_num != mesh.vertices.shape[0]:
         logger.info(f'{mesh.metadata["file_name"]} => Remove unreferenced vertices {older_num} to {mesh.vertices.shape[0]}')
         mesh.export(filepath)
-        need_commit = True
+        NEED_COMMIT = True
 
     return all([rule.__call__(mesh) for rule in rules])
 
